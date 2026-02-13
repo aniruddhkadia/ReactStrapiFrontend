@@ -1,0 +1,26 @@
+@import '../../../css-config/mixins.scss';
+.Offerbanner-section {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .Offerbanner-content {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    .text {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .offerbanner-img {
+    width: 100%;
+  }
+}

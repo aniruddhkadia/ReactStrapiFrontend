@@ -1,0 +1,43 @@
+@import '../../css-config/mixins.scss';
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: #fdf0e6;
+  .login {
+    background: #fff;
+    margin: 30px;
+    padding: 20px;
+  }
+  .logo a:hover {
+    color: #fb56c1;
+  }
+  .login-btn {
+    outline: 0;
+    border: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background: #ff3f6c;
+    border-bottom: 3px solid #df3f65;
+    flex-grow: 1;
+  }
+  .link {
+    color: #ff3f6c;
+  }
+  .heading {
+    font-weight: 700;
+    font-size: 30px;
+  }
+  .small-font {
+    font-size: 12px;
+    color: #7e7e7e;
+  }
+}
