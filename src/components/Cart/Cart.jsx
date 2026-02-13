@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { MdClose } from "react-icons/md";
 import { BsCartX } from "react-icons/bs";
 import { Context } from "../../utils/context";
