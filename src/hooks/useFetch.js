@@ -5,7 +5,7 @@ const useFetch = (endpoint) => {
 
   useEffect(() => {
     makeApiCall();
-  }, [makeApiCall]);
+  }, [endpoint]);
 
   const makeApiCall = async () => {
     const res = await fetchDataFromApi(endpoint);

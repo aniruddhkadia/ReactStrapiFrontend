@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     getProducts();
     getCategories();
-  }, [getCategories, getProducts]);
+  }, []);
 
   const getProducts = () => {
     fetchDataFromApi("/api/products?populate=*").then((res) => {
