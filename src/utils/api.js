@@ -10,7 +10,7 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_DEV_URL,
 });
 
-export const fetchDataFromApi = async (url, params) => {
+export const fetchDataFromApi = async (url) => {
   try {
     const { data } = await api.get(url, params);
     return data;

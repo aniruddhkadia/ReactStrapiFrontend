@@ -12,7 +12,7 @@ import {
   FaCartPlus,
 } from "react-icons/fa";
 import "./SingleProduct.scss";
-import { getImageUrl } from "../../../utils/getImageUrl";
+import { getImageUrl } from "../../utils/getImageUrl";
 
 const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);

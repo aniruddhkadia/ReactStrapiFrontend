@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { MdClose } from "react-icons/md";
 import { Context } from "../../../utils/context";
-import { getImageUrl } from "../utils/getImageUrl";
+import { getImageUrl } from "../../../utils/getImageUrl";
 
 import "./CartItem.scss";
 
