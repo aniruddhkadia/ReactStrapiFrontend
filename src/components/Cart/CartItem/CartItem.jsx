@@ -1,52 +1,57 @@
 import React, { useContext } from "react";
 import { MdClose } from "react-icons/md";
 import { Context } from "../../../utils/context";
+import { getImageUrl } from "../utils/getImageUrl";
 
 import "./CartItem.scss";
 
 // import Prodimag from "../../../assets/products/earbuds-prod-2.webp";
 
 const CartItem = () => {
+  const { cartItems, handleRemoveFromCart, handleCartProductQuantity } =
+    useContext(Context);
 
-    const { cartItems, handleRemoveFromCart, handleCartProductQuantity } =
-        useContext(Context);
+  return (
+    <div className="cart-products">
+      {cartItems?.map((item) => (
+        <div key={item.id} className="search-result-item">
+          <div className="image-container">
+            <img
+              src={getImageUrl(item.attributes.img.data[0].attributes.url)}
+              alt=""
+            />
+          </div>
 
-    return (
-        <div className="cart-products">
-
-            {cartItems?.map((item) => (
-
-                <div key={item.id} className="search-result-item" >
-
-                    <div className="image-container">
-                        <img src={process.env.REACT_APP_DEV_URL +
-                            item.attributes.img.data[0].attributes.url} alt="" />
-                    </div>
-
-                    <div className="prod-details">
-                        <span className="name">{item.attributes.title}</span>
-                        <MdClose className="close-btn" onClick={() => handleRemoveFromCart(item)} />
-                        <div className="quantity-buttons">
-                            <span onClick={() => handleCartProductQuantity("dec", item)}> - </span>
-                            <span>{item.attributes.quantity}</span>
-                            <span onClick={() => handleCartProductQuantity("inc", item)}> + </span>
-                        </div>
-                        <div className="text">
-                            <span>{item.attributes.quantity}</span>
-                            <span>x</span>
-                            <span className="highlight">
-                                <span>&#8377;</span> {item.attributes.price *
-                                    item.attributes.quantity}
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
-
-            ))}
-
+          <div className="prod-details">
+            <span className="name">{item.attributes.title}</span>
+            <MdClose
+              className="close-btn"
+              onClick={() => handleRemoveFromCart(item)}
+            />
+            <div className="quantity-buttons">
+              <span onClick={() => handleCartProductQuantity("dec", item)}>
+                {" "}
+                -{" "}
+              </span>
+              <span>{item.attributes.quantity}</span>
+              <span onClick={() => handleCartProductQuantity("inc", item)}>
+                {" "}
+                +{" "}
+              </span>
+            </div>
+            <div className="text">
+              <span>{item.attributes.quantity}</span>
+              <span>x</span>
+              <span className="highlight">
+                <span>&#8377;</span>{" "}
+                {item.attributes.price * item.attributes.quantity}
+              </span>
+            </div>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default CartItem;
